@@ -9,11 +9,14 @@ function startFortuneTelling() {
     // 2. 检查输入是否为空
     if (name === "" || date === "") {
         alert("名前と日付を両方入力してください。");
-        return; // 如果有空值，停止程序
+        return;
     }
 
-    // 3. 生成一个1到4之间的随机数
-    const fortune = Math.floor(Math.random() * 4) + 1;
+    // 3. 使用日期生成一个伪随机数
+    // 我们将日期作为种子，然后对一个大质数取余来得到一个固定的伪随机数。
+    // 这比Math.random()更适合“每日占卜”。
+    const seed = parseInt(date, 10);
+    const fortune = (seed % 4) + 1; // 对4取余，结果为0, 1, 2, 3，然后加1得到1到4的数字
 
     // 4. 根据输入和随机数生成占卜结果文本
     const resultText = `今日の${name}さん、あなたの運気番号は${fortune}です。`;
@@ -26,6 +29,4 @@ function startFortuneTelling() {
         <p>${resultText}</p>
         <p>${fortuneMeaning}</p>
     `;
-
 }
-
