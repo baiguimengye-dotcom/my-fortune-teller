@@ -1,10 +1,10 @@
 function startFortuneTelling() {
     // 1. 从HTML中获取用户输入的值
     const dateInput = document.getElementById("dateInput");
-    const ageInput = document.getElementById("ageInput");
+    const nameInput = document.getElementById("nameInput");
 
     const date = dateInput.value;
-    const age = ageInput.value;
+    const name = nameInput.value;
 
     // 2. 检查输入是否为空
     if (name === "" || date === "") {
@@ -28,3 +28,4 @@ function startFortuneTelling() {
     `;
 
 }
+
