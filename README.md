@@ -1,2 +1,2 @@
-# my-fortune-teller
+# fortune-teller
 My first web fortune teller
