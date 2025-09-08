@@ -1,14 +1,14 @@
 function startFortuneTelling() {
     // 1. 从HTML中获取用户输入的值
-    const nameInput = document.getElementById("nameInput");
+    const dateInput = document.getElementById("dateInput");
     const ageInput = document.getElementById("ageInput");
 
-    const name = nameInput.value;
+    const date = dateInput.value;
     const age = ageInput.value;
 
     // 2. 检查输入是否为空
-    if (name === "" || age === "") {
-        alert("名前と年齢を両方入力してください。");
+    if (name === "" || date === "") {
+        alert("名前と日付を両方入力してください。");
         return; // 如果有空值，停止程序
     }
 
@@ -16,7 +16,7 @@ function startFortuneTelling() {
     const fortune = Math.floor(Math.random() * 4) + 1;
 
     // 4. 根据输入和随机数生成占卜结果文本
-    const resultText = `${age}歳の${name}さん、あなたの運気番号は${fortune}です。`;
+    const resultText = `今日の${name}さん、あなたの運気番号は${fortune}です。`;
     const fortuneMeaning = "1:大吉 2:中吉 3:吉 4:凶";
 
     // 5. 在HTML中显示结果
@@ -26,4 +26,5 @@ function startFortuneTelling() {
         <p>${resultText}</p>
         <p>${fortuneMeaning}</p>
     `;
+
 }
